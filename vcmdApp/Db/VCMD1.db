@@ -1,53 +1,64 @@
-record(stringout,"$(P)Open")
+record(bo,"$(P)Open")
 	{
 		field(DESC,"open")
 		field(DTYP,"stream")
 		field(OUT,"@VCMD1.proto Open $(PORT)")
+		field(FLNK, "$(P)OpenCloseShutter.PROC CA")
+	}
+	
+record(seq, "$(P)OpenCloseShutter")
+	{
+		field(DLY0,"2.0")
+		field(DOL0,"0")
+		field(LNK0, "$(P)Close PP MS")
+		field(DLY1,"0.0")
+		field(DOL1,"1")
+		field(LNK1, "$(P)Open NPP MS")
 	}
 
-record(stringout,"$(P)Close")
+record(bo,"$(P)Close")
 	{
 		field(DESC,"close")
 		field(DTYP,"stream")
 		field(OUT,"@VCMD1.proto Close $(PORT)")
 	}
   
-record(stringout,"$(P)Trigger")
+record(longout,"$(P)Trigger")
 	{
 		field(DESC,"Trigger")
 		field(DTYP,"stream")
 		field(OUT,"@VCMD1.proto Trigger $(PORT)")
 	}
 	
-record(stringout,"$(P)Reset")
+record(longout,"$(P)Reset")
 	{
 		field(DESC,"Reset")
 		field(DTYP,"stream")
 		field(OUT,"@VCMD1.proto Reset $(PORT)")
 	}
 
-record(stringout,"$(P)Gateon")
+record(longout,"$(P)Gateon")
 	{
 		field(DESC,"Gate on")
 		field(DTYP,"stream")
 		field(OUT,"@VCMD1.proto Gateon $(PORT)")
 	}
   
-record(stringout,"$(P)Gateoff")
+record(longout,"$(P)Gateoff")
 	{
 		field(DESC,"Gate off")
 		field(DTYP,"stream")
 		field(OUT,"@VCMD1.proto Gateoff $(PORT)")
 	}
 
-record(stringout,"$(P)Auxenable")
+record(longout,"$(P)Auxenable")
 	{
 		field(DESC,"Aux enable")
 		field(DTYP,"stream")
 		field(OUT,"@VCMD1.proto Auxenable $(PORT)")
 	}
 
-record(stringout,"$(P)Auxdisable")
+record(longout,"$(P)Auxdisable")
 	{
 		field(DESC,"AUX disable")
 		field(DTYP,"stream")
