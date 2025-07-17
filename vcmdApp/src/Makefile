@@ -55,7 +55,6 @@ vcmd_DBD += drvAsynSerialPort.dbd
 vcmd_DBD += calc.dbd
 vcmd_DBD += stream-scalcout.dbd
 vcmd_DBD += stream.dbd
-vcmd_DBD += as.dbd
 vcmd_DBD += asSupport.dbd
 
 # vcmd_registerRecordDeviceDriver.cpp derives from vcmd.dbd
